@@ -5,6 +5,14 @@
 # Pulls the latest build straight from the `develop` branch (a live mirror of
 # dist\, auto-published by build.bat on every build -- there are no tagged
 # releases here, `develop`'s current HEAD is always "latest").
+#
+# If you downloaded this repo as a ZIP instead of using the one-liner above,
+# running ".\install.ps1" directly will likely fail with "running scripts is
+# disabled on this system" -- that's PowerShell's default execution policy
+# blocking local .ps1 FILES (irm | iex isn't affected, since it never saves
+# or runs a file). Either use the one-liner above instead, or run this local
+# copy with the policy bypassed just for this one invocation:
+#   powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 $ErrorActionPreference = "Stop"
 
